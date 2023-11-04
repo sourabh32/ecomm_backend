@@ -1,7 +1,7 @@
 import express, { urlencoded } from "express"
 import dotenv from "dotenv"
 import { connectDb } from "./utils/dbConfig.js"
-
+import cors from "cors"
 import productRoutes from "./routes/productRoutes.js"
 dotenv.config()
 connectDb()
@@ -9,7 +9,12 @@ connectDb()
 
 
 
+
+
+
+
 const app = express()
+app.use(cors())
 
 app.use(express.json())
 app.use(urlencoded({extended:true}))
