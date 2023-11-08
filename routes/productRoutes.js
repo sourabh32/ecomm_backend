@@ -1,9 +1,10 @@
 import express from "express"
-import { getProducts } from "../controllers/productController.js"
+import { getProducts, getproduct } from "../controllers/productController.js"
 
 const router = express.Router()
 
 router.post("/products",getProducts)
+router.post("/product",getproduct)
 
 
 
