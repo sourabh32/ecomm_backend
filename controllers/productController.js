@@ -2,9 +2,10 @@ import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
 
 const getProducts = asyncHandler(async (req, res) => {
+  const { category, sort, lower, higher, brands } = req.body;
   try {
-    const { category, sort, lower, higher, brands } = req.body;
-    console.log(category, sort, lower, higher, brands);
+   
+   
     const page = req.body.page || 1;
     const limit = req.body.limit || 5;
     const minPrice = lower || 0;
