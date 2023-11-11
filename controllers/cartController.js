@@ -9,7 +9,7 @@ const getCartItems = asyncHandler(async (req, res) => {
   res.status(200).json({ userId });
 });
 const addItemCart = asyncHandler(async (req, res) => {
-  const { userId, productId } = req.params;
+  const { userId, productId } = req.body;
 
   try {
     const cart = await Cart.findOne({ userId });
@@ -53,7 +53,7 @@ const addItemCart = asyncHandler(async (req, res) => {
 });
 
 const removeItemCart = asyncHandler(async (req, res) => {
-  const { userId, productId } = req.params;
+  const { userId, productId } = req.body;
 
   try {
     const cart = await Cart.findOne({ userId });
@@ -83,7 +83,7 @@ const removeItemCart = asyncHandler(async (req, res) => {
 
 
 const decrementItemCart = asyncHandler(async (req, res) => {
-    const { userId, productId } = req.params;
+    const { userId, productId } = req.body;
   
     try {
       const cart = await Cart.findOne({ userId });
@@ -116,7 +116,7 @@ const decrementItemCart = asyncHandler(async (req, res) => {
   });
 
   const incrementItemCart = asyncHandler(async (req, res) => {
-    const { userId, productId } = req.params;
+    const { userId, productId } = req.body;
   
     try {
       const cart = await Cart.findOne({ userId });

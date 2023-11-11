@@ -5,10 +5,10 @@ import { addItemCart, decrementItemCart, getCartItems, incrementItemCart, remove
 const router = express.Router()
 
 router.get("/get_items/:userId",getCartItems)
-router.post("/add_item/:userId/:productId",addItemCart)
-router.post("/increment_item/:userId/:productId",incrementItemCart)
-router.post("/decrement_item/:userId/:productId",decrementItemCart)
-router.delete("/remove_item/:userId/:productId",removeItemCart)
+router.post("/add_item",addItemCart)
+router.post("/increment_item",incrementItemCart)
+router.post("/decrement_item",decrementItemCart)
+router.delete("/remove_item",removeItemCart)
 
 
 
